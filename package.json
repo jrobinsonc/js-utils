@@ -1,6 +1,6 @@
 {
   "name": "@jrobinsonc/js-utils",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "Generic utility functions for JavaScript",
   "license": "ISC",
   "main": "./dist/index.cjs",
