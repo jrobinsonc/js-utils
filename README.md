@@ -12,15 +12,15 @@ pnpm add @jrobinsonc/js-utils
 
 ## Available Utilities
 
-- `isDefined<T>(arg: T | undefined | null): arg is T` - Checks if a value is defined (not undefined or null)
-- `isEmpty(arg: unknown): boolean` - Checks if a value is empty (null, undefined, empty string, empty array, empty object, empty Map/Set, or NaN for numbers)
-- `isNil(arg: unknown): arg is null | undefined` - Checks if a value is null or undefined
-- `isPlainObject(arg: unknown): arg is Record<string, unknown>` - Checks if a value is a plain object
+- `isDefined<TValue>(value: TValue | undefined | null): value is TValue` - Checks if a value is defined (not undefined or null)
+- `isEmpty(value: unknown): boolean` - Checks if a value is empty (null, undefined, empty string, empty array, empty object, empty Map/Set, or NaN for numbers). Note: boolean `false` and number `0` are not considered empty.
+- `isNil(value: unknown): value is null | undefined` - Checks if a value is null or undefined
+- `isPlainObject(value: unknown): value is Record<string, unknown>` - Checks if a value is a plain object
 - `isPrimitive(value: unknown): boolean` - Checks if a value is a primitive (null, undefined, string, number, boolean, bigint, symbol)
-- `isStringifiable(arg: unknown): arg is string | number | boolean | null | undefined | bigint | symbol | { toString(): string }` - Checks if a value can be converted to a string
+- `isStringifiable(value: unknown): value is string | number | boolean | null | undefined | bigint | symbol | { toString(): string }` - Checks if a value can be converted to a string
 - `raise(message: string | Error): never` - Raises an error with the given message or Error object
-- `rescue<T>(fn: () => T): T | undefined` - Executes a function and returns the result, or undefined if it throws an error
-- `safeJsonParse(value: unknown): unknown` - Safely parses a JSON string and returns the parsed object or null if invalid
+- `rescue<T>(fn: () => T, throwError?: boolean): T | Error` - Executes a function and returns the result, or an Error if it throws. Supports both synchronous and asynchronous functions.
+- `safeJsonParse(value: unknown, reviver?: (this: unknown, key: string, value: unknown) => unknown): unknown` - Safely parses a JSON string and returns the parsed object or null if invalid
 
 ## Usage
 
