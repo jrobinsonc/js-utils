@@ -29,6 +29,7 @@ const config = [
         exclude: ['tests/**/*'],
       }),
     ],
+    external: [],
   },
   {
     input: 'src/index.ts',
