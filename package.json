@@ -39,7 +39,7 @@
     "@rollup/plugin-typescript": "^12.1.4",
     "@tsconfig/node22": "^22.0.2",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22",
+    "@types/node": "^24",
     "eslint": "^9.33.0",
     "globals": "^16.3.0",
     "jest": "^30.0.5",
