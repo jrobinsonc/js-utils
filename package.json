@@ -1,0 +1,41 @@
+{
+  "name": "@jrobinsonc/js-utils",
+  "version": "1.0.0",
+  "description": "Generic utility functions for JavaScript",
+  "license": "ISC",
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --pretty --project tsconfig.json",
+    "lint": "eslint '{src,tests}/**/*.ts'",
+    "lint:fix": "eslint '{src,tests}/**/*.ts' --fix",
+    "format": "prettier --write .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrobinsonc/js-utils.git"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@jest/globals": "^30.0.5",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22",
+    "eslint": "^9.33.0",
+    "globals": "^16.3.0",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0"
+  },
+  "engines": {
+    "node": "22.x",
+    "pnpm": "10.x"
+  },
+  "packageManager": "pnpm@10.15.0"
+}

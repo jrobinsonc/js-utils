@@ -1,0 +1,14 @@
+{
+  "npm.packageManager": "pnpm",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // Editor
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ESLint
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript"],
+  // Prettier
+  "prettier.enable": true,
+  // Jest
+  "jest.enable": true
+}
