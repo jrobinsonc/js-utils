@@ -38,9 +38,20 @@ describe('isEmpty', () => {
 
     it('should return false for valid numbers including zero', () => {
       expect(isEmpty(0)).toBe(false);
+      expect(isEmpty(-0)).toBe(false);
       expect(isEmpty(1)).toBe(false);
       expect(isEmpty(-1)).toBe(false);
       expect(isEmpty(3.14)).toBe(false);
+    });
+
+    it('should return false for BigInt values', () => {
+      expect(isEmpty(BigInt(0))).toBe(false);
+      expect(isEmpty(BigInt(42))).toBe(false);
+    });
+
+    it('should return false for Infinity values', () => {
+      expect(isEmpty(Infinity)).toBe(false);
+      expect(isEmpty(-Infinity)).toBe(false);
     });
   });
 
@@ -66,11 +77,17 @@ describe('isEmpty', () => {
       expect(isEmpty(new Map([['key', 'value']]))).toBe(false);
       expect(isEmpty(new Set([1, 2, 3]))).toBe(false);
     });
+
+    it.todo('Decide: if WeakMap and WeakSet should be handled');
   });
 
   describe('objects', () => {
     it('should return true for empty objects', () => {
       expect(isEmpty({})).toBe(true);
+    });
+
+    it('should return true for objects with null prototype', () => {
+      expect(isEmpty(Object.create(null))).toBe(true);
     });
 
     it('should return false for non-empty objects', () => {
@@ -85,8 +102,15 @@ describe('isEmpty', () => {
         isEmpty(() => {
           /* empty function */
         }),
-      ).toThrow();
-      expect(() => isEmpty(Symbol('test'))).toThrow();
+      ).toThrow(Error);
     });
+
+    it.todo('Decide: if Symbols should be handled');
+
+    it.todo(
+      'Decide: how to handle objects with only non-enumerable properties',
+    );
+
+    it.todo('Decide: how to handle objects with only symbol keys');
   });
 });

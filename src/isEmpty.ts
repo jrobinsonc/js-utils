@@ -22,10 +22,8 @@ export function isEmpty(value: unknown): boolean {
   }
 
   if (typeof value === 'number') {
-    /**
-     * `isNaN` checks whether the value is not a number or cannot be converted
-     * into a number. `Number.isNaN` only checks if the value is equal to NaN.
-     */
+    // `isNaN` checks whether the value is not a number or cannot be converted
+    // into a number. `Number.isNaN` only checks if the value is equal to NaN.
     return isNaN(value);
   }
 
@@ -35,6 +33,12 @@ export function isEmpty(value: unknown): boolean {
 
   if (value instanceof Map || value instanceof Set) {
     return value.size === 0;
+  }
+
+  if (typeof value === 'bigint') {
+    // BigInt values are never considered empty.
+    // Even BigInt(0) represents a value, a falsy value, not an empty value.
+    return false;
   }
 
   if (typeof value === 'object') {
