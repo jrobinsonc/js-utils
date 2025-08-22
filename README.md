@@ -12,7 +12,6 @@ pnpm add @jrobinsonc/js-utils
 
 ## Available Utilities
 
-- `isDefined<TValue>(value: TValue | undefined | null): value is TValue` - Checks if a value is defined (not undefined or null)
 - `isEmpty(value: unknown): boolean` - Checks if a value is empty (null, undefined, empty string, empty array, empty object, empty Map/Set, or NaN for numbers). Note: boolean `false` and number `0` are not considered empty.
 - `isNil(value: unknown): value is null | undefined` - Checks if a value is null or undefined
 - `isPlainObject(value: unknown): value is Record<string, unknown>` - Checks if a value is a plain object

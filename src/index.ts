@@ -1,4 +1,3 @@
-export * from './isDefined';
 export * from './isEmpty';
 export * from './isNil';
 export * from './isPlainObject';
