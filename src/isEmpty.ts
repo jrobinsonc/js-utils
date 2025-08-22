@@ -24,7 +24,7 @@ export function isEmpty(value: unknown): boolean {
   if (typeof value === 'number') {
     // `isNaN` checks whether the value is not a number or cannot be converted
     // into a number. `Number.isNaN` only checks if the value is equal to NaN.
-    return isNaN(value);
+    return Number.isNaN(value);
   }
 
   if (Array.isArray(value)) {

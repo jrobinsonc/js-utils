@@ -30,7 +30,7 @@ describe('isEmpty', () => {
     });
   });
 
-  describe('numbers', () => {
+  describe('numeric values', () => {
     it('should return true for NaN', () => {
       expect(isEmpty(NaN)).toBe(true);
       expect(isEmpty(Number.NaN)).toBe(true);
