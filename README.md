@@ -1,5 +1,7 @@
 # JS Utils
 
+[![CI](https://github.com/jrobinsonc/js-utils/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jrobinsonc/js-utils/actions/workflows/ci.yml)
+
 A collection of type-safe generic utilities.
 
 ## Installation
