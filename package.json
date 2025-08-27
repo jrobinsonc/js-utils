@@ -3,12 +3,9 @@
   "version": "1.0.0-alpha.1",
   "description": "Generic utility functions for JavaScript",
   "license": "ISC",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
