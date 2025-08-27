@@ -3,12 +3,9 @@
   "version": "1.0.0-alpha.1",
   "description": "Generic utility functions for JavaScript",
   "license": "ISC",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
@@ -17,9 +14,9 @@
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "check-types": "tsc --pretty --noEmit --project tsconfig.json",
-    "lint": "eslint '{src,tests}/**/*.ts'",
-    "lint:fix": "eslint '{src,tests}/**/*.ts' --fix",
+    "check-types": "tsc --pretty --project tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -55,7 +52,7 @@
     "dist"
   ],
   "engines": {
-    "node": "22.x",
+    "node": ">=18",
     "pnpm": "10.x"
   },
   "packageManager": "pnpm@10.15.0"
