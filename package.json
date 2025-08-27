@@ -17,9 +17,9 @@
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "check-types": "tsc --pretty --noEmit --project tsconfig.json",
-    "lint": "eslint '{src,tests}/**/*.ts'",
-    "lint:fix": "eslint '{src,tests}/**/*.ts' --fix",
+    "check-types": "tsc --pretty --project tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watch",
