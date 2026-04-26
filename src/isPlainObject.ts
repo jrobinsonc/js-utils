@@ -11,6 +11,7 @@ export function isPlainObject(
     typeof value === 'object' &&
     value !== null &&
     !Array.isArray(value) &&
-    Object.getPrototypeOf(value) === Object.prototype
+    (Object.getPrototypeOf(value) === Object.prototype ||
+      Object.getPrototypeOf(value) === null)
   );
 }

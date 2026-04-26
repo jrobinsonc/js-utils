@@ -8,7 +8,7 @@ const config = [
     input: 'src/index.ts',
     output: [
       {
-        file: 'dist/index.js',
+        file: 'dist/index.mjs',
         format: 'es',
         sourcemap: true,
       },
@@ -22,10 +22,6 @@ const config = [
       nodeResolve(),
       commonjs(),
       typescript({
-        tsconfig: './tsconfig.json',
-        declaration: true,
-        declarationDir: './dist',
-        outDir: './dist',
         exclude: ['tests/**/*'],
       }),
     ],
@@ -34,14 +30,7 @@ const config = [
   {
     input: 'src/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es' }],
-    plugins: [
-      dts({
-        compilerOptions: {
-          baseUrl: '.',
-          paths: { '@/*': ['./src/*'] },
-        },
-      }),
-    ],
+    plugins: [dts()],
   },
 ];
 

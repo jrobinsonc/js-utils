@@ -1,36 +1,44 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
+    // ============================================
+    // Environment
+    // ============================================
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+    "outDir": "./dist",
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    // ============================================
+    // Type Safety
+    // ============================================
     "allowUnreachableCode": false,
     "alwaysStrict": true,
-    "baseUrl": ".",
-    "checkJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "moduleResolution": "node",
-    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": false, // => ESLint
-    "noUnusedParameters": false, // => ESLint
-    "paths": { "@/*": ["./src/*"] },
-    "preserveConstEnums": true,
-    "removeComments": true,
-    "resolveJsonModule": true,
     "strictNullChecks": true,
-    "target": "ES2017",
     "useUnknownInCatchVariables": true,
-    "verbatimModuleSyntax": true
+    // "noUnusedLocals": false, // => ESLint
+    // "noUnusedParameters": false, // => ESLint
+    // ============================================
+    // Interoperability
+    // ============================================
+    "resolveJsonModule": true,
+    // ============================================
+    // Build & Performance
+    // ============================================
+    "removeComments": true,
+    "verbatimModuleSyntax": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules", ".history"]
+  "exclude": ["node_modules", ".history", "dist"]
 }
